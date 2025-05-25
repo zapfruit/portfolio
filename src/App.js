@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Moon, Sun, Code, Palette, Zap, User, Briefcase, MessageCircle, CatIcon } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, Github, Linkedin, Mail, Code, Palette, Zap, CatIcon } from 'lucide-react';
 import { MdShowChart } from "react-icons/md";
 import { GiRadarSweep, GiFarmTractor } from "react-icons/gi";
 import { FaImage } from "react-icons/fa";
 import { SiBlockchaindotcom } from "react-icons/si";
 
 const Portfolio = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  
   const [activeSection, setActiveSection] = useState('home');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
@@ -71,23 +71,19 @@ const Portfolio = () => {
     }
   };
 
-  const backgroundStyle = {
-    left: mousePosition.x - 192,
-    top: mousePosition.y - 192,
-    transform: `translate(${scrollY * 0.1}px, ${scrollY * 0.05}px)`,
-  };
+  
 
   
 
   return (
     <div style={{
-        minHeight: "100vh",
-        background: darkMode
-          ? "linear-gradient(135deg, #18181b 0%, #23272f 100%)"
-          : "linear-gradient(135deg, #f3f4f6 0%, #fff 100%)",
-        color: darkMode ? "#fff" : "#18181b",
-        transition: "background 0.5s, color 0.5s",
-      }}className={`min-h-screen transition-all duration-500 ${darkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white' : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900'}`}>
+    minHeight: "100vh",
+    transition: "background 0.5s, color 0.5s",
+    background: "linear-gradient(135deg, #f3f4f6 0%, #fff 100%)", // light background
+    color: "#18181b", // dark text for light mode
+  }}
+  className="min-h-screen transition-all duration-500"
+>
       
       {/* Enhanced Background Effects */}
       <>
@@ -213,7 +209,7 @@ const Portfolio = () => {
         color: 'transparent',
         letterSpacing: '0.05em',
       }}>
-        Kamakhya.dev
+        zapfruit.dev
       </div>
 
       {/* Navigation Links */}
@@ -436,7 +432,7 @@ const Portfolio = () => {
       {/* About Section - Enhanced */}
       <section id="about" className="py-24 lg:py-32 relative"style={{
     background: "transparent",
-    color: darkMode ? "#fff" : "#18181b",
+    
     // ...other styles
   }}>
         <div className="about-container">
@@ -661,7 +657,7 @@ const Portfolio = () => {
     padding: "7rem 0 0 0",
     background: "transparent",
     position: "relative",
-    color: darkMode ? "#fff" : "#18181b",
+    
   }}
 >
   <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 2rem" }}>
@@ -966,7 +962,7 @@ const Portfolio = () => {
   id="contact"
   style={{
     minHeight: "100vh",
-    color: darkMode ? "#fff" : "#18181b",
+    
     display: "flex",
     alignItems: "center",
     padding: "5rem 0",
